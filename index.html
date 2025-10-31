@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XSS Örneği</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            min-height: 50px;
+        }
+
+        .warning {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>XSS Güvenlik Açığı Demo</h1>
+
+        <div class="input-group">
+            <input type="text" id="userInput" placeholder="Buraya XSS payload yazın...">
+            <button onclick="showInput()">Göster</button>
+        </div>
+
+        <p class="warning">⚠️ Uyarı: Bu sayfa güvenlik açığı içerir!</p>
+
+        <h3>Sonuç:</h3>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function showInput() {
+            const userInput = document.getElementById('userInput').value;
+
+            document.getElementById('output').innerHTML = userInput;
+        }
+
+
+        ;
+    </script>
+</body>
+</html>
